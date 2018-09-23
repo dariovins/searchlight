@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
+<!-- Active URL: http://127.0.0.1/wgd/ -->
+<sql>
+<datatypes db="mysql">
+
+	<group label="Numeric" color="rgb(238,238,170)">
+
+		<type label="Integer" length="0" sql="INTEGER" re="INT" quote=""/>
+
+		<type label="Decimal" length="1" sql="DECIMAL" re="DEC" quote=""/>
+
+		<type label="Single precision" length="0" sql="FLOAT" quote=""/>
+
+		<type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote=""/>
+
+	</group>
+
+
+
+	<group label="Character" color="rgb(255,200,200)">
+
+		<type label="Char" length="1" sql="CHAR" quote="'"/>
+
+		<type label="Varchar" length="1" sql="VARCHAR" quote="'"/>
+
+		<type label="Text" length="0" sql="MEDIUMTEXT" re="TEXT" quote="'"/>
+
+		<type label="Binary" length="1" sql="BINARY" quote="'"/>
+
+		<type label="Varbinary" length="1" sql="VARBINARY" quote="'"/>
+
+		<type label="BLOB" length="0" sql="BLOB" re="BLOB" quote="'"/>
+
+	</group>
+
+
+
+	<group label="Date &amp; Time" color="rgb(200,255,200)">
+
+		<type label="Date" length="0" sql="DATE" quote="'"/>
+
+		<type label="Time" length="0" sql="TIME" quote="'"/>
+
+		<type label="Datetime" length="0" sql="DATETIME" quote="'"/>
+
+		<type label="Year" length="0" sql="YEAR" quote=""/>
+
+		<type label="Timestamp" length="0" sql="TIMESTAMP" quote="'"/>
+
+	</group>
+
+	
+
+	<group label="Miscellaneous" color="rgb(200,200,255)">
+
+		<type label="ENUM" length="1" sql="ENUM" quote=""/>
+
+		<type label="SET" length="1" sql="SET" quote=""/>
+
+		<type label="Bit" length="0" sql="bit" quote=""/>
+
+	</group>
+
+</datatypes><table x="1589" y="33" name="parliament_club">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="parliament_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="parliament" row="id" />
+</row>
+<row name="club_name" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>NULL</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="UNIQUE" name="club_name">
+<part>club_name</part>
+</key>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table x="7" y="431" name="authors">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="type" null="0" autoincrement="0">
+<datatype>INTEGER(3)</datatype>
+<default>0</default></row>
+<row name="is_user" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>Y</default></row>
+<row name="ime" null="0" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+</row>
+<row name="prezime" null="0" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+</row>
+<row name="adresa" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="grad" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="drzava" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="tel" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="fax" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="mob" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="mail" null="0" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_firstAccess" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastLogin" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table x="879" y="73" name="mandate_member">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="parliament_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="mandate_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="member_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="member" row="id" />
+</row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="mandate_id">
+<part>mandate_id</part>
+<part>member_id</part>
+</key>
+</table>
+<table x="1218" y="51" name="mandate_member_club">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="mandate_member_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="mandate_member" row="id" />
+</row>
+<row name="parliament_club_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="parliament_club" row="id" />
+</row>
+<row name="parliament_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="mandate_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="member_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="active" null="0" autoincrement="0">
+<datatype>ENUM('Y','N')</datatype>
+<default>Y</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="UNIQUE" name="mandate_member_id">
+<part>mandate_member_id</part>
+<part>parliament_club_id</part>
+</key>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table x="773" y="569" name="mandate_session">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="parliament_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="mandate_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="mandate" row="id" />
+</row>
+<row name="session_no" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="session_date" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>NULL</default></row>
+<row name="session_chair" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table x="407" y="44" name="member">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="screen_name" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>NULL</default></row>
+<row name="first_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="last_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="slika" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="is_user" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="is_author" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="screen_name">
+<part>screen_name</part>
+</key>
+</table>
+<table x="1313" y="638" name="parliament">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="level" null="1" autoincrement="0">
+<datatype>ENUM('MUNICIPAL','CANTON','ENTITY','STATE')</datatype>
+<default>NULL</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="name">
+<part>name</part>
+</key>
+</table>
+<table x="1057" y="535" name="mandate">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="parliament_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="parliament" row="id" />
+</row>
+<row name="mandate_name" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>NULL</default></row>
+<row name="year_start" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="year_end" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="president_user_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="deputy1_user_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="deputy2_user_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="mandate_name">
+<part>mandate_name</part>
+</key>
+</table>
+<table x="1553" y="349" name="parliament_committee">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="parliament_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="parliament" row="id" />
+</row>
+<row name="committee_name" null="1" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default>NULL</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+<key type="UNIQUE" name="committee_name">
+<part>committee_name</part>
+</key>
+</table>
+<table x="555" y="297" name="session_agenda">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="mandate_session_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="mandate_session" row="id" />
+</row>
+<row name="agenda_no" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="agenda_title" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table x="552" y="606" name="session_minutes">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="parliament_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="mandate_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="mandate_session_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="mandate_session" row="id" />
+</row>
+<row name="file_text" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="file_pdf" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table x="301" y="596" name="session_minutes_blob">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="session_minutes_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="session_minutes" row="id" />
+</row>
+<row name="file_dump" null="1" autoincrement="0">
+<datatype>BLOB</datatype>
+<default>NULL</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table x="283" y="447" name="session_minutes_debate">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="session_minutes_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default><relation table="session_minutes" row="id" />
+</row>
+<row name="dnevni_red_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="member_id" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<row name="debate_text" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<row name="userID" null="1" autoincrement="0">
+<datatype>INTEGER(9)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table x="8" y="81" name="users">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER(10)</datatype>
+</row>
+<row name="type" null="0" autoincrement="0">
+<datatype>INTEGER(3)</datatype>
+<default>0</default></row>
+<row name="regions" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="locales" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="events" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+<default>NULL</default></row>
+<row name="grupa" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="grupa_common" null="1" autoincrement="0">
+<datatype>INTEGER(4)</datatype>
+<default>NULL</default></row>
+<row name="username" null="0" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="password" null="0" autoincrement="0">
+<datatype>VARCHAR(40)</datatype>
+</row>
+<row name="ime" null="1" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+<default>NULL</default></row>
+<row name="prezime" null="1" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+<default>NULL</default></row>
+<row name="adresa" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="grad" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="drzava" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="tel" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="fax" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="mob" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="mail" null="0" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="komentar" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="deleted" null="0" autoincrement="0">
+<datatype>ENUM('N','Y')</datatype>
+<default>N</default></row>
+<row name="date_deleted" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_created" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_access" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>'0000-00-00 00:00:00'</default></row>
+<row name="date_lastChange" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default></row>
+<key type="PRIMARY" name="PRIMARY">
+<part>id</part>
+</key>
+</table>
+</sql>
